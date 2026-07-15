@@ -67,8 +67,11 @@ const server = http.createServer((req, res) => {
     return;
   }
 
-  let requestedPath = req.url === '/' ? '/index.html' : req.url;
-  if (requestedPath === '/white-mirror-dashboard' || requestedPath === '/white-mirror-dashboard/') {
+  const requestUrl = new URL(req.url, `http://${req.headers.host || 'localhost'}`);
+  const pathname = requestUrl.pathname;
+
+  let requestedPath = pathname === '/' ? '/index.html' : pathname;
+  if (pathname === '/white-mirror-dashboard' || pathname === '/white-mirror-dashboard/') {
     requestedPath = '/index.html';
   }
   const filePath = path.normalize(path.join(publicDir, requestedPath));
