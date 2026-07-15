@@ -169,6 +169,24 @@ button {
   font-weight: 700;
 }
 
+button.secondary {
+  color: var(--text);
+  background: rgba(15, 23, 42, 0.8);
+  border: 1px solid rgba(125, 211, 252, 0.16);
+}
+
+button:disabled {
+  opacity: 0.7;
+  cursor: wait;
+}
+
+.preset-row {
+  display: flex;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+}
+
 .panel-heading {
   display: flex;
   justify-content: space-between;
