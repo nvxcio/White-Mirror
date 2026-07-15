@@ -239,6 +239,13 @@ button {
   line-height: 1.5;
 }
 
+.footer {
+  margin-top: 1.25rem;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
 .variable-section {
   margin-top: 1rem;
 }
